@@ -1,7 +1,11 @@
 package com.gzsendi.qhb.mapper;
 
 import com.gzsendi.qhb.model.User;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository("userMapper")
 public interface UserMapper {
     int deleteByPrimaryKey(Integer userId);
 
@@ -14,4 +18,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    List<User> selectAllUser();
 }
