@@ -1,9 +1,9 @@
-package com.gzsendi.qhb.service.impl;
+package com.gzsendi.sendinm.service.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.gzsendi.qhb.mapper.UserMapper;
-import com.gzsendi.qhb.model.User;
-import com.gzsendi.qhb.service.UserService;
+import com.gzsendi.sendinm.mapper.UserMapper;
+import com.gzsendi.sendinm.model.User;
+import com.gzsendi.sendinm.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -1,6 +1,6 @@
-package com.gzsendi.qhb.service;
+package com.gzsendi.sendinm.service;
 
-import com.gzsendi.qhb.model.User;
+import com.gzsendi.sendinm.model.User;
 
 import java.util.List;
 

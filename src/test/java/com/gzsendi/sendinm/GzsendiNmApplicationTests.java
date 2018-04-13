@@ -1,4 +1,4 @@
-package com.gzsendi.qhb;
+package com.gzsendi.sendinm;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

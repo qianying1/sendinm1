@@ -1,6 +1,6 @@
-package com.gzsendi.qhb.mapper;
+package com.gzsendi.sendinm.mapper;
 
-import com.gzsendi.qhb.model.User;
+import com.gzsendi.sendinm.model.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

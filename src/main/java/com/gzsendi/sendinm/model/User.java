@@ -1,4 +1,4 @@
-package com.gzsendi.qhb.model;
+package com.gzsendi.sendinm.model;
 
 public class User {
     private Integer userId;
