@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 
 @Controller
-@RequestMapping(value = "/userr")
+@RequestMapping(value = "/user")
 public class UserController {
     @Resource(name = "userServiceImpl")
     private UserService userService;
