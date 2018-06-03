@@ -1,20 +1,27 @@
 package com.gzsendi.sendinm.service.impl;
 
-import com.github.pagehelper.PageHelper;
 import com.gzsendi.sendinm.mapper.UserMapper;
 import com.gzsendi.sendinm.model.User;
 import com.gzsendi.sendinm.service.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service("userServiceImpl")
 public class UserServiceImpl implements UserService {
-@Resource(name = "userMapper")
+    @Resource(name = "userMapper")
     private UserMapper userMapper;
-    public int addUser(User user){
-        return userMapper.insert(user);
+
+    public int addUser(User user) {
+        System.out.println("username: " + user.getUserName() + " password: " + user.getPassword());
+        try {
+            userMapper.insert(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+        return 1;
     }
 
     /*
@@ -23,9 +30,9 @@ public class UserServiceImpl implements UserService {
      * pageNum 开始页数
      * pageSize 每页显示的数据条数
      * */
-    public List<User> findAllUser(int pageNum, int pageSize) {
+    /*public List<User> findAllUser(int pageNum, int pageSize) {
         //将参数传给这个方法就可以实现物理分页了，非常简单。
         PageHelper.startPage(pageNum, pageSize);
         return userMapper.selectAllUser();
-    }
+    }*/
 }

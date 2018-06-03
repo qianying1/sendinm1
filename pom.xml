@@ -31,6 +31,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
@@ -42,6 +46,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- redis  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
         <!-- alibaba的druid数据库连接池 -->
@@ -97,6 +107,27 @@
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>${snakeyaml.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-juli -->
+        <!--<dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-juli</artifactId>
+            <version>8.0.41</version>
+        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat8-maven-plugin -->
+        <!--<dependency>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat8-maven-plugin</artifactId>
+            <version>3.0-r1655215</version>
+        </dependency>-->
+
     </dependencies>
 
     <build>
@@ -118,6 +149,11 @@
                 </configuration>
             </plugin>
 
+            <!--plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat8-maven-plugin</artifactId>
+                <version>3.0-r1655215</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
@@ -128,7 +164,7 @@
                     <username>tomcat</username>
                     <password>tomcat</password>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -140,14 +176,40 @@
             </plugin>
         </plugins>
         <resources>
-            <resource>
-                <directory>src/main/java</directory>
+            <!--<resource>
+                <directory>src/main/resources</directory>
                 <includes>
                     <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>-->
+            <resource>
+                <directory>src/main/resources/mapping</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+                <targetPath>com/gzsendi/sendinm/mapper</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>application.*</include>
                 </includes>
             </resource>
         </resources>
     </build>
+
+    <repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 
 </project>

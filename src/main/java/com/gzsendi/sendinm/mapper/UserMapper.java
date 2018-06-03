@@ -1,23 +1,23 @@
 package com.gzsendi.sendinm.mapper;
 
 import com.gzsendi.sendinm.model.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
+@Mapper
 @Repository("userMapper")
 public interface UserMapper {
-    int deleteByPrimaryKey(Integer userId);
+//    int deleteByPrimaryKey(Integer userId);
 
+    @Transactional
     int insert(User record);
 
-    int insertSelective(User record);
+//    int insertSelective(User record);
 
-    User selectByPrimaryKey(Integer userId);
+//    User selectByPrimaryKey(Integer userId);
 
-    int updateByPrimaryKeySelective(User record);
+//    int updateByPrimaryKeySelective(User record);
 
-    int updateByPrimaryKey(User record);
-
-    List<User> selectAllUser();
+//    int updateByPrimaryKey(User record);
 }
