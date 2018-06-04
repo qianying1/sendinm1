@@ -54,7 +54,7 @@ public class RedisUtil {
             operations.set(key, val);
         } catch (RedisConnectionFailureException e) {
             redisServiceOpen.openRedisService();
-            logger.warn("redis服务未开启，但已进行启动操作", e);
+            logger.warn("redis服务未开启，但已进行启动操作");
             operations.set(key, val);
         } catch (Exception e) {
             logger.error("redis服务器操作错误！>>>>>>>>>>>>>>>>>>>>", e);
@@ -110,7 +110,7 @@ public class RedisUtil {
             result = operations.get(key);
         } catch (RedisConnectionFailureException e) {
             redisServiceOpen.openRedisService();
-            logger.warn("redis服务未开启，但已进行启动操作", e);
+            logger.warn("redis服务未开启，但已进行启动操作");
             result = operations.get(key);
         } catch (Exception e) {
             logger.error("redis服务器操作错误！>>>>>>>>>>>>>>>>>>>>", e);
@@ -129,7 +129,7 @@ public class RedisUtil {
                 redisTemplate.delete(key);
             } catch (RedisConnectionFailureException e) {
                 redisServiceOpen.openRedisService();
-                logger.warn("redis服务未开启，但已进行启动操作", e);
+                logger.warn("redis服务未开启，但已进行启动操作");
                 redisTemplate.delete(key);
             } catch (Exception e) {
                 logger.error("redis服务器操作错误！>>>>>>>>>>>>>>>>>>>>", e);
@@ -148,7 +148,7 @@ public class RedisUtil {
                 remove(key);
             } catch (RedisConnectionFailureException e) {
                 redisServiceOpen.openRedisService();
-                logger.warn("redis服务未开启，但已进行启动操作", e);
+                logger.warn("redis服务未开启，但已进行启动操作");
                 try {
                     remove(key);
                 } catch (Exception e2) {
